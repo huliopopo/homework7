@@ -6,27 +6,24 @@ public class Main {
         int deposit = 15000;
         double sum = 0;
         while (sum < 2_459_000) {
-            sum = sum * percent;
-            sum = sum + deposit;
+            sum *= percent;
+            sum += deposit;
             System.out.println("Месяц " + nubmerOfMonth +
                     ", сумма наколплений равна " + sum + " рублей.");
-            nubmerOfMonth = nubmerOfMonth + 1;
+            nubmerOfMonth++;
         }
         //task2
         int i = 1;
         while (i < 11) {
-            System.out.print(i + " ");
-            i = i + 1;
+            System.out.print(i++ + " ");
         }
         System.out.println();
-        for (; i > 1; ) {
-            i = i - 1;
+        for (i = 10; i > 0; i--) {
             System.out.print(i + " ");
         }
         //task3
         System.out.println();
         int year = 2000;
-        int numberOfYears = 10;
         int population = 12_000_000;
         int birthRate = 17;
         int deathRate = 8;
@@ -38,52 +35,47 @@ public class Main {
             System.out.println("Год " + year + ", численность населения составляет " + population);
         }
         */
-        while (numberOfYears > 0) {
+        while (year < 2010) {
             population = population + population / 1000 * totalRate;
             year++;
-            numberOfYears--;
             System.out.println("Год " + year + ", численность населения составляет " + population);
         }
         //task4
         int numberOfMonth = 0;
         int goal = 12_000_000;
-        deposit = 15000;
         percent = 1.07;
         while (deposit <= goal) {
-            System.out.println("Месяц " + numberOfMonth + ", сумма накоплений " + deposit);
             deposit = (int) (deposit * percent);
-            numberOfMonth = numberOfMonth + 1;
-
+            numberOfMonth++;
+            System.out.println("Месяц " + numberOfMonth + ", сумма накоплений " + deposit);
         }
         //task5
         numberOfMonth = 0;
-        goal = 12_000_000;
         deposit = 15000;
-        percent = 1.07;
-
         while (deposit < goal) {
             if (numberOfMonth % 6 == 0) {
                 System.out.println("Месяц " + numberOfMonth + ", сумма накоплений " + deposit);
             }
             deposit = (int) (deposit * percent);
-            numberOfMonth = numberOfMonth + 1;
+            numberOfMonth++;
         }
         //task6
         numberOfMonth = 0;
         deposit = 15000;
-        percent = 1.07;
-        while (numberOfMonth <= 108) {
+        int numbersOfYears = 9;
+        int monthsInYears = 12 * numbersOfYears;
+        while (numberOfMonth <= monthsInYears) {
             if (numberOfMonth % 6 == 0) {
                 System.out.println("Месяц " + numberOfMonth + ", сумма накоплений " + deposit);
             }
             deposit = (int) (deposit * percent);
-            numberOfMonth = numberOfMonth + 1;
+            numberOfMonth++;
         }
         //task7
         int firstFriday = 1;
         while (firstFriday <= 31) {
             System.out.println("Сегодня пятница, " + firstFriday + "-е число. Необходимо подготовить отчет");
-            firstFriday = firstFriday + 7;
+            firstFriday += 7;
         }
         //task8
         year = 2024;
@@ -92,14 +84,16 @@ public class Main {
         int yearStart = year - 200;
         int yearStop = year + 100;
         while (yearOfTheComet <= yearStop) {
-            yearOfTheComet = yearOfTheComet + periodOfTheComet;
-            if (yearOfTheComet >= yearStart && yearOfTheComet <= yearStop && yearOfTheComet % 79 == 0) {
+            yearOfTheComet += periodOfTheComet;
+            if (yearOfTheComet >= yearStart && yearOfTheComet <= yearStop && yearOfTheComet % periodOfTheComet == 0) {
                 System.out.println(yearOfTheComet);
             }
         }
 
 
     }
-
-
 }
+
+
+
+
